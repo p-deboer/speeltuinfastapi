@@ -1,5 +1,5 @@
 tasks:
-  - name: pythonUpgrade
+  - name: terminal
     init: |
       pyenv install 3.9.14
       pyenv local 3.9.14
