@@ -1,13 +1,15 @@
 tasks:
-  - init: |
+  - name: pythonUpgrade
+    init: |
       pyenv install 3.9.14
       pyenv local 3.9.14
       pip install --upgrade pip
       gp sync-done pythonupgrade
-  - init: |
+  - name: uvicorn
+    init: |
       gp sync-await pythonupgrade
       pip install -r requirements.txt
-    command: python3 main.py
+    command: uvicorn main:app --reload
 
 ports:
   - port: 8000
