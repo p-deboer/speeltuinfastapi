@@ -2,7 +2,7 @@ tasks:
   - init: |
       pyenv install 3.9.14
       pyenv local 3.9.14
-      pip install --upgrade pip'
+      pip install --upgrade pip
       gp sync-done pythonupgrade
   - init: |
       gp sync-await pythonupgrade
