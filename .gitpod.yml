@@ -1,3 +1,18 @@
 tasks:
-  - init: pip3 install -r requirements.txt
+  - init: |
+      pyenv install 3.9.14
+      pyenv local 3.9.14
+      gp sync-done pythonupgrade
+  - init: |
+      gp sync-await pythonupgrade
+      pip3 install -r requirements.txt
     command: python3 main.py
+
+ports:
+  - port: 8000
+    visibility: private
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-python.python
